@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "name": "skin",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "condition": "armor_pieces:in_fluid",
+              "fluid": "minecraft:lava"
+            },
+            {
+              "condition": "minecraft:random_chance_with_looting",
+              "chance": 0.02,
+              "looting_multiplier": 1.1
+            }
+          ],
+          "name": "armor_pieces:strider_skin"
+        }
+      ]
+    }
+  ]
+}

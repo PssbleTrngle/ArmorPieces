@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "armor_pieces:coral_chestplate_brain"
+    ]
+  },
+  "criteria": {
+    "ingredients": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:heart_of_the_sea"
+          },
+          {
+            "item": "minecraft:brain_coral_block"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "armor_pieces:coral_chestplate_brain"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "ingredients",
+      "has_the_recipe"
+    ]
+  ]
+}

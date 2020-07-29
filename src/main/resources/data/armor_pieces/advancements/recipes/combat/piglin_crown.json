@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "armor_pieces:piglin_crown"
+    ]
+  },
+  "criteria": {
+    "ingredients": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:prismarine_shard"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "armor_pieces:piglin_crown"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "ingredients",
+      "has_the_recipe"
+    ]
+  ]
+}

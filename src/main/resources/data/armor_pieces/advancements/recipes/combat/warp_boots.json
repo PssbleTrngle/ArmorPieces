@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "armor_pieces:warp_boots"
+    ]
+  },
+  "criteria": {
+    "ingredients": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "armor_pieces:endermite_scale"
+          },
+          {
+            "item": "minecraft:obsidian"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "armor_pieces:warp_boots"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "ingredients",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "armor_pieces:magma_leggings"
+    ]
+  },
+  "criteria": {
+    "ingredients": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "armor_pieces:strider_skin"
+          },
+          {
+            "item": "minecraft:string"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "armor_pieces:magma_leggings"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "ingredients",
+      "has_the_recipe"
+    ]
+  ]
+}

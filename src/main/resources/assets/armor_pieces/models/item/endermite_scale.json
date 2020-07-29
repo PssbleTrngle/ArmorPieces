@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "armor_pieces:item/endermite_scale"
+  }
+}

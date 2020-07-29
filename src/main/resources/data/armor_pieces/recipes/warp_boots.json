@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "s s",
+    "# #"
+  ],
+  "key": {
+    "s": {
+      "item": "armor_pieces:endermite_scale"
+    },
+    "#": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "armor_pieces:warp_boots"
+  }
+}

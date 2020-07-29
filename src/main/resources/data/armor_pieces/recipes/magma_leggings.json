@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#o#",
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "armor_pieces:strider_skin"
+    },
+    "o": {
+      "item": "minecraft:magma_cream"
+    }
+  },
+  "result": {
+    "item": "armor_pieces:magma_leggings"
+  }
+}

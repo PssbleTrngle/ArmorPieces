@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "armor_pieces:rabbit_boots"
+    ]
+  },
+  "criteria": {
+    "ingredients": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:rabbit"
+          },
+          {
+            "item": "minecraft:string"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "armor_pieces:rabbit_boots"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "ingredients",
+      "has_the_recipe"
+    ]
+  ]
+}

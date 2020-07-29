@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[31,)"
+#issueTrackerURL="http://my.issue.tracker/" #optional
+[[mods]]
+modId="armor_pieces"
+version="${version}"
+displayName="Armor Pieces"
+#updateJSONURL="http://myurl.me/"
+#displayURL="http://example.com/"
+#logoFile="examplemod.png"
+# A text field displayed in the mod UI
+credits="Thanks to u/orendorff for most of the ideas"
+# A text field displayed in the mod UI
+authors="possible_triangle"
+description='''
+Mismatched Armor Pieces and Sets
+'''
+[[dependencies.examplemod]] #optional
+    # the modid of the dependency
+    modId="forge"
+    mandatory=true
+    versionRange="[31,)" 
+    ordering="NONE"
+    side="BOTH"
+# Here's another dependency
+[[dependencies.examplemod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"
