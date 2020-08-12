@@ -1,0 +1,16 @@
+
+{
+  "required": true,
+  "package": "possible_triangle.armorpieces.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "minVersion": "0.8",
+  "refmap": "armor_pieces.refmap.json",
+  "mixins": [
+    "ClientPlayerMixin",
+    "EntityMixin",
+    "LivingEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

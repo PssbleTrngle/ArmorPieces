@@ -1,15 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "grg",
+    "ggg",
     "g g"
   ],
   "key": {
     "g": {
-      "item": "armor_pieces:royal_gold_ingot"
-    },
-    "r": {
-      "item": "armor_pieces:ruby"
+      "item": "armor_pieces:royal_gold"
     }
   },
   "result": {

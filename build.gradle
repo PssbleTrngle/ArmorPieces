@@ -3,16 +3,20 @@ buildscript {
         maven { url = 'https://files.minecraftforge.net/maven' }
         jcenter()
         mavenCentral()
+        maven { url = 'https://dist.creeper.host/Sponge/maven' }
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
     }
 }
+
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
+apply plugin: 'org.spongepowered.mixin'
 
-def parseConfig(File config) {
+static def parseConfig(File config) {
     config.withReader {
         def prop = new Properties()
         prop.load(it)
@@ -23,13 +27,16 @@ def parseConfig(File config) {
 ext.configFile = file('build.properties')
 ext.config = parseConfig(configFile)
 
+mixin {
+    add sourceSets.main, "${config.mod_id}.refmap.json"
+}
+
 version = config.mod_version
 group = "possibletriangle.${config.mod_id}"
 archivesBaseName = config.mod_name
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
-println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
     mappings channel: config.mapping_channel, version: config.mapping_version
     runs {
@@ -37,9 +44,8 @@ minecraft {
             workingDirectory project.file('run')
 
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
-            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
+            arg "-mixin.config=${config.mod_id}.mixins.json".toString()
 
             mods {
                 armor_pieces {
@@ -52,9 +58,8 @@ minecraft {
             workingDirectory project.file('run')
 
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
-            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
+            arg "-mixin.config=${config.mod_id}.mixins.json".toString()
 
             mods {
                 armor_pieces {
@@ -66,10 +71,7 @@ minecraft {
         data {
             workingDirectory project.file('run')
 
-            // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
-            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
             args '--mod', config.mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
